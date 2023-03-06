@@ -15,3 +15,6 @@ services:
     image: "jraviles/prometheus_speedtest:latest"
     ports:
       - "9516:9516"
+  dockerhub:
+    build: .
+    image: telescope40/effective-spork:latest
