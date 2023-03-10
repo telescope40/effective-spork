@@ -5,8 +5,7 @@ mkdir prometheus
 
 sudo apt-get update
 
-sudo apt-get install docker
+sudo apt-get install docker --yes --force-yes
 
-sudo apt-get install docker-compose
+sudo apt-get install docker-compose --yes --force-yes
 
-git clone git@github.com:telescope40/effective-spork.git
