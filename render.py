@@ -1,6 +1,6 @@
 #Louis DeVictoria
 #Python Script to load the dictionary file and jinja2 template to create a configuration
-from /usr/lib/python3/dist-packages/jinja2  import Environment, FileSystemLoader , StrictUndefined
+from jinja2  import Environment, FileSystemLoader , StrictUndefined
 #Local Directory
 file_loader = FileSystemLoader('./')
 #Load Environment
