@@ -26,8 +26,6 @@ services:
       - 3000
     ports:
       - 3000:3000
-#    links:
-#      - "loki:loki"
     volumes:
       - ./grafana/:/etc/grafana/provisioning/datasources
 
@@ -61,8 +59,6 @@ services:
     image: prom/prometheus:latest
     ports:
       - 9090:9090/tcp
-#    links:
-#      - "loki:loki"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 

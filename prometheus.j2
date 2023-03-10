@@ -1,0 +1,37 @@
+global:
+  scrape_interval:     10s
+  evaluation_interval: 10s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+
+{% for name , addr in iperftests.items() -%}
+# iperf3 tests
+  - job_name: {{name}}
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - {{addr.address}}
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        target_label: instance
+      - target_label: __address__
+        replacement: iperf3_querier_exporter:9579
+{% endfor %}
+
+# speedtest tests
+  - job_name: {{node_ip}}-speedtest
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - {{node_ip}}:9516
+
