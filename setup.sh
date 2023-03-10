@@ -1,7 +1,8 @@
 #!/bin/bash
-mkdir monitor && cd monitor
 
 mkdir prometheus
+
+mkdir pydir
 
 sudo apt-get update
 
