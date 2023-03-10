@@ -2,16 +2,19 @@
 version: "3.0"
 services:
   iperf3_querier_exporter:
+    hostname: iperf3-exporter
     image: "edgard/iperf3-exporter:latest"
     ports:
       - "9579:9579"
   iperf3_responder:
+    hostname: iperf3_responder
     image: "networkstatic/iperf3"
     ports:
       - "5201:5201"
     command:
       - "-s"
   speedtest:
+    hostname: prometheus_speedtest
     image: "jraviles/prometheus_speedtest:latest"
     ports:
       - "9516:9516"
@@ -26,6 +29,8 @@ services:
       - 3000
     ports:
       - 3000:3000
+    links:
+      - "loki:loki"
     volumes:
       - ./grafana/:/etc/grafana/provisioning/datasources
 
@@ -59,6 +64,8 @@ services:
     image: prom/prometheus:latest
     ports:
       - 9090:9090/tcp
+    links:
+      - "loki:loki"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -76,4 +83,9 @@ services:
       PROMSCALE_DB_CONNECT_RETRIES: 10
       PROMSCALE_WEB_TELEMETRY_PATH: /metrics-text
       PROMSCALE_DB_URI: postgres://postgres:password@db:5432/postgres?sslmode=allow
-
+  #Description: Loki - Logging solution, cost-save minimal indexing make the data to store more compact but efficient and simpler
+  #Feeded by data from vector_agg
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
