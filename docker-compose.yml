@@ -26,8 +26,8 @@ services:
       - 3000
     ports:
       - 3000:3000
-    links:
-      - "loki:loki"
+#    links:
+#      - "loki:loki"
     volumes:
       - ./grafana/:/etc/grafana/provisioning/datasources
 
@@ -61,8 +61,8 @@ services:
     image: prom/prometheus:latest
     ports:
       - 9090:9090/tcp
-    links:
-      - "loki:loki"
+#    links:
+#      - "loki:loki"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -81,6 +81,3 @@ services:
       PROMSCALE_WEB_TELEMETRY_PATH: /metrics-text
       PROMSCALE_DB_URI: postgres://postgres:password@db:5432/postgres?sslmode=allow
 
-  dockerhub:
-    build: .
-    image: telescope40/effective-spork:latest
