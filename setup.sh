@@ -14,6 +14,7 @@ apt install python3-pip --yes --force-yes
 
 pip3 install -r requirements
 
+pip install jinja2
 #python3 -m venv /pydir/
 
 mv docker-compose.yml monitor/.
