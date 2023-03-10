@@ -2,3 +2,4 @@ jinja2
 yaml
 requests
 ipaddress
+python3-venv
