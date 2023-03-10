@@ -22,3 +22,5 @@ mv docker-compose.yml monitor/.
 python3 getPublicIP.py
 
 python render.py
+
+chmod u+x setup.sh
