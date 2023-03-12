@@ -6,3 +6,4 @@ iperftests:
   singapore:
     name: SG-Digital-Ocean
     address: 18.143.66.129
+node_ip: 131.226.32.118

@@ -44,6 +44,7 @@ services:
     environment:
       POSTGRES_PASSWORD: password
       POSTGRES_USER: postgres
+      TS_TUNE_MEMORY: 500MB
 
   #Description: pgadmin - web ui for PostgresSQL, for convenience, if you dont want to interact with db using cli.
   #Dependencies: Need to manually Login to http://localhost:5050 and connect "db" service using POSTGRES_USER,POSTGRES_PASSWORD
