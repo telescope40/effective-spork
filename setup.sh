@@ -1,8 +1,4 @@
 #!/bin/bash
-echo "Make Setup.sh executable"
-
-chmod u+x setup.sh
-
 echo "Create Directory for Prometheus"
 
 mkdir prometheus
@@ -12,6 +8,7 @@ echo "Create Directory for Grafana"
 mkdir grafana
 
 echo "Copy Datasouce File over to grafana directory"
+
 mv datasource.yml grafana/datasource.yml
 
 echo "apt update ubuntu"
