@@ -1,9 +1,9 @@
 systemname: awsspeednode
 iperftests:
   newyork:
-    name: NY-Digital-Ocean
-    address: 137.184.201.4
+    name: NY-CLOUD
+    address: x.x.x.x
   singapore:
-    name: SG-Digital-Ocean
-    address: 18.143.66.129
-node_ip: 131.226.32.118
+    name: SG-CLOUD
+    address: y.y.y.y
+node_ip: z.z.z.z

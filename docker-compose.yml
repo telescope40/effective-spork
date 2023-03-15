@@ -14,7 +14,7 @@ services:
     command:
       - "-s"
   speedtest:
-    hostname: prometheus_speedtest
+    hostname: speedtest
     image: "jraviles/prometheus_speedtest:latest"
     ports:
       - "9516:9516"

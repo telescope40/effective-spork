@@ -21,7 +21,7 @@ def render_cfg():
         #leaf_file = hostname+".yml"
         #print(leaf_file)
 
-    with open("./prometheus/prometheus.yml", 'w+') as config:
+    with open("./prometheus/prometheus.yml", 'a+') as config:
         config.write(config_yaml)
         config.close()
 
