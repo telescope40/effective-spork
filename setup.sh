@@ -37,6 +37,6 @@ echo "Running Startup Script"
 
 python3 getPublicIP.py
 
-python render.py
+python3 render.py
 
 

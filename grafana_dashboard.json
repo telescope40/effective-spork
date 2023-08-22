@@ -22,12 +22,12 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
+  "id": 2,
   "links": [],
   "liveNow": true,
   "panels": [
     {
-      "datasource": null,
+      "datasource": "Prometheus",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -105,7 +105,7 @@
           "exemplar": true,
           "expr": "download_speed_bps{}",
           "interval": "",
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{ job }} Download ",
           "refId": "A"
         },
         {
@@ -113,7 +113,7 @@
           "expr": "upload_speed_bps{}",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{ job }}",
+          "legendFormat": "{{job}} Upload",
           "refId": "B"
         }
       ],
@@ -121,8 +121,8 @@
       "type": "timeseries"
     },
     {
-      "datasource": null,
-      "description": "",
+      "datasource": "Prometheus",
+      "description": "to Speed Test Server",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -202,7 +202,7 @@
           "exemplar": true,
           "expr": "ping_ms{}",
           "interval": "",
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{ job }} Latency ",
           "refId": "A"
         }
       ],
@@ -210,8 +210,8 @@
       "type": "timeseries"
     },
     {
-      "datasource": null,
-      "description": "Download Speeds reports from IPERF ",
+      "datasource": "Prometheus",
+      "description": "Iperf Testing between Sites",
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -286,13 +286,21 @@
       "targets": [
         {
           "exemplar": true,
-          "expr": "iperf3_received_bytes / iperf3_received_seconds * 8",
+          "expr": "iperf3_received_bytes/iperf3_received_seconds * 8",
           "interval": "",
-          "legendFormat": "{{job}}",
+          "legendFormat": "{{ job }} Download to {{instance}}",
           "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "iperf3_sent_bytes/iperf3_sent_seconds * 8",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ job }} Upload to {{instance}}",
+          "refId": "B"
         }
       ],
-      "title": "IPERF Download",
+      "title": "IPERF Testing",
       "type": "timeseries"
     }
   ],
@@ -309,7 +317,7 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "Site Performace",
-  "uid": "1wzAPW-Vk",
-  "version": 4
+  "title": "Site Performace Copy",
+  "uid": "BLSRLHUVk",
+  "version": 1
 }
