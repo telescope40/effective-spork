@@ -21,7 +21,6 @@ services:
     #Description: Grafana - display logs and metrics WEB UI
     #Dependencies: feeded by data from Prometheus and Loki service using http:
     # - http://prometheus:9090
-    # - http://loki:3100
   grafana:
     hostname: grafana
     image: grafana/grafana:master
@@ -29,8 +28,6 @@ services:
       - 3000
     ports:
       - 3000:3000
-    links:
-      - "loki:loki"
     volumes:
       - ./grafana/:/etc/grafana/provisioning/datasources
 
@@ -65,8 +62,6 @@ services:
     image: prom/prometheus:latest
     ports:
       - 9090:9090/tcp
-    links:
-      - "loki:loki"
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
 
@@ -86,7 +81,3 @@ services:
       PROMSCALE_DB_URI: postgres://postgres:password@db:5432/postgres?sslmode=allow
   #Description: Loki - Logging solution, cost-save minimal indexing make the data to store more compact but efficient and simpler
   #Feeded by data from vector_agg
-  loki:
-    image: grafana/loki:latest
-    ports:
-      - "3100:3100"
