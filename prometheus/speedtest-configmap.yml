@@ -1,4 +1,4 @@
-#IPERF VMs
+#Speedtest VMs
 #kind: ConfigMap
 #apiVersion: v1
 #metadata:
@@ -23,7 +23,6 @@
       "labels":
         "job": "speedtest"
         "site": "BLR"
-        "ip": "143.110.242.25"
         "environment": "production"
         "datacenter": "do-bagalore"
         "provider": "digitalocean"
@@ -36,7 +35,6 @@
       "labels":
         "job": "speedtest"
         "site": "FRA"
-        "source": "157.245.83.95:9579"
         "environment": "production"
         "datacenter": "do-frankfurt"
         "provider": "digitalocean"
