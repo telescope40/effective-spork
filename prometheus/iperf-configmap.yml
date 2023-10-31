@@ -1,0 +1,86 @@
+#IPERF VMs
+#kind: ConfigMap
+#apiVersion: v1
+#metadata:
+#  name: staging-iperf-configmap
+#  namespace: core
+#data:
+  #iperf-configmap.yml: |-
+    - targets:
+        #New York Digital Ocean
+        - 159.89.177.46
+      "labels":
+        "job": "speedtest"
+        "site": "NYC"
+        "environment": "production"
+        "datacenter": "do-newyork"
+        "provider": "digitalocean"
+        "source_name": "speedtest-monitor-do-nyc-01.safersoftware.net"
+
+    - targets:
+      #Bangalore Digital Ocean
+        - 143.110.242.25
+      "labels":
+        "job": "speedtest"
+        "site": "BLR"
+        "ip": "143.110.242.25"
+        "environment": "production"
+        "datacenter": "do-bagalore"
+        "provider": "digitalocean"
+        "continent": "asia"
+        "source_name": "speedtest-monitor-do-blr-01.safersoftware.net"
+
+    - "targets":
+      #Frankfurt Digital Ocean
+        - 157.245.83.95
+      "labels":
+        "job": "speedtest"
+        "site": "FRA"
+        "source": "157.245.83.95:9579"
+        "environment": "production"
+        "datacenter": "do-frankfurt"
+        "provider": "digitalocean"
+        "continent": "europe"
+        "source_name": "speedtest-monitor-do-fra-01.safersoftware.net"
+
+
+    - "targets":
+      #San Fransico Digital Ocean
+        - 164.92.114.110
+      "labels":
+        "job": "speedtest"
+        "site": "SFO"
+        "environment": "production"
+        "datacenter": "do-sanfransico"
+        "provider": "digitalocean"
+        "continent": "north america"
+        "source_name": "speedtest-monitor-do-sfo-01.safersoftware.net"
+
+    - "targets":
+      #Singapore Digital Ocean
+        - 128.199.198.194
+      "labels":
+        "job": "speedtest"
+        "site": "SGP"
+        "environment": "production"
+        "datacenter": "do-singapore"
+        "provider": "digitalocean"
+        "continent": "asia"
+        "source_name": "speedtest-monitor-do-sgp-01.safersoftware.net"
+
+    - "targets":
+      #Sydney Digital Ocean
+        - 170.64.216.139
+      "labels":
+        "job": "speedtest"
+        "site": "SYD"
+        "environment": "production"
+        "datacenter": "do-sydney"
+        "provider": "digitalocean"
+        "continent": "australia"
+        "source_name": "speedtest-monitor-do-syd-01.safersoftware.net"
+
+
+
+
+

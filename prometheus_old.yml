@@ -1,0 +1,320 @@
+global:
+  scrape_interval:     10s
+  evaluation_interval: 10s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+
+# NEW YORK NYC iperf3 tests
+  - job_name: NYC
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - targets.json
+    static_configs:
+    - targets:
+      - 164.92.114.110
+      - 157.245.83.95
+      - 128.199.198.194
+      - 143.110.242.25
+      - 170.64.216.139
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 159.89.177.46:9579
+
+# SAN FRANSICO SFO iperf3 tests
+  - job_name: SFO
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46
+      - 157.245.83.95
+      - 128.199.198.194
+      - 143.110.242.25
+      - 170.64.216.139
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 164.92.114.110:9579
+# FRANKFURT FRA iperf3 tests
+  - job_name: FRA
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46
+      - 164.92.114.110
+      - 128.199.198.194
+      - 143.110.242.25
+      - 170.64.216.139
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 157.245.83.95:9579
+
+# BLR iperf3 tests
+  - job_name: BLR
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46
+      - 164.92.114.110
+      - 128.199.198.194
+      - 157.245.83.95
+      - 170.64.216.139
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 143.110.242.25:9579
+
+# SGP iperf3 tests
+  - job_name: SGP
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46
+      - 164.92.114.110
+      - 143.110.242.25
+      - 157.245.83.95
+      - 170.64.216.139
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 128.199.198.194:9579
+
+# SYD iperf3 tests
+  - job_name: SYD
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46
+      - 164.92.114.110
+      - 143.110.242.25
+      - 157.245.83.95
+      - 128.199.198.194
+    params:
+      port: ['5201']
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139'
+        replacement: 'SYD'
+        target_label: site
+      - target_label: __address__
+        replacement: 170.64.216.139:9579
+
+# all speedtest
+  - job_name: speedtest
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    static_configs:
+    - targets:
+      - 159.89.177.46:9516
+      - 164.92.114.110:9516
+      - 157.245.83.95:9516
+      - 128.199.198.194:9516
+      - 143.110.242.25:9516
+      - 170.64.216.139:9516
+    relabel_configs:
+      - source_labels: [__address__]
+        target_label: __param_target
+      - source_labels: [__param_target]
+        regex: '164.92.114.110:9516'
+        replacement: 'SFO'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '159.89.177.46:9516'
+        replacement: 'NYC'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '157.245.83.95:9516'
+        replacement: 'FRA'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '128.199.198.194:9516'
+        replacement: 'SGP'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '143.110.242.25:9516'
+        replacement: 'BLR'
+        target_label: site
+      - source_labels: [__param_target]
+        regex: '170.64.216.139:9516'
+        replacement: 'SYD'
+        target_label: site
+
+remote_write:
+  - url: "http://promscale:9201/write"
+remote_read:
+  - url: "http://promscale:9201/read"
+    read_recent: true
