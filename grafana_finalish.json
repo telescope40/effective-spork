@@ -22,8 +22,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 3,
-  "iteration": 1697489280478,
+  "id": 2,
+  "iteration": 1698768013205,
   "links": [],
   "liveNow": true,
   "panels": [
@@ -586,9 +586,9 @@
         "error": null,
         "hide": 0,
         "includeAll": false,
-        "label": "site",
+        "label": "site_old",
         "multi": false,
-        "name": "site",
+        "name": "site_old",
         "options": [],
         "query": {
           "query": "ping_ms",
@@ -598,6 +598,33 @@
         "regex": "/.*site=\"([\\d\\w-]+)\".*/",
         "skipUrlSync": false,
         "sort": 5,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "FRA",
+          "value": "FRA"
+        },
+        "datasource": "Prometheus",
+        "definition": "{job=\"speedtest\"}",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "sites",
+        "options": [],
+        "query": {
+          "query": "{job=\"speedtest\"}",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/.*,site=\"([0-9a-zA-Z]*)\",.*/",
+        "skipUrlSync": false,
+        "sort": 0,
         "type": "query"
       }
     ]
@@ -610,5 +637,5 @@
   "timezone": "",
   "title": "VPN Performace Copy",
   "uid": "twGW-6MSk",
-  "version": 42
+  "version": 2
 }
