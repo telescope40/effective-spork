@@ -66,6 +66,7 @@ services:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
       - ./prometheus/iperf-configmap.yml:/etc/prometheus/iperf-configmap.yml
       - ./prometheus/speedtest-configmap.yml:/etc/prometheus/speedtest-configmap.yml
+      - ./prometheus/targets.json:/etc/prometheus/targets.json
 
   #Description: Promscale - centralized, durable, and reliable storage solution for our Prometheus data
   #Dependencies: feeded by data from Prometheus, storing data in our Postgress TimescaledDB db.

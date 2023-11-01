@@ -6,7 +6,7 @@
 #  namespace: core
 #data:
   #speedtest-configmap.yml: |-
-    - targets:
+    - "targets":
         #New York Digital Ocean
         - 159.89.177.46
       "labels":
@@ -17,7 +17,7 @@
         "provider": "digitalocean"
         "source_name": "speedtest-monitor-do-nyc-01.safersoftware.net"
 
-    - targets:
+    - "targets":
       #Bangalore Digital Ocean
         - 143.110.242.25
       "labels":

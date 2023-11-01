@@ -1,0 +1,22 @@
+# IPERF3 Measurements
+  - job_name: iperf
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    params:
+      port: ['5201']
+    static_configs:
+      - targets:
+        - 170.64.216.139:9579
+        labels:
+          __param_target: "159.89.177.46
+
+      - targets:
+        - 159.89.177.46:9579
+        labels:
+          __param_target: 170.64.216.139
+
+      - targets:
+        - 157.245.83.95:9579
+        labels:
+          __param_target: 170.64.216.139

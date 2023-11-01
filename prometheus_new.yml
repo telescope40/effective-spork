@@ -1,0 +1,136 @@
+global:
+  scrape_interval:     10s
+  evaluation_interval: 10s
+scrape_configs:
+  - job_name: prometheus
+    static_configs:
+      - targets: ['localhost:9090']
+
+# IPERF3 Measurements
+  - job_name: iperf-nyc
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 159.89.177.46:9579
+
+# IPERF3 Measurements
+  - job_name: iperf-blr
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 143.110.242.25:9579
+
+# IPERF3 Measurements
+  - job_name: iperf-fra
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 157.245.83.95:9579
+
+# IPERF3 Measurements
+  - job_name: iperf-sfo
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 164.92.114.110:9579
+
+# IPERF3 Measurements
+  - job_name: iperf-sgp
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 128.199.198.194:9579
+
+# IPERF3 Measurements
+  - job_name: iperf-syd
+    scrape_interval: 3m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/iperf-configmap.yml
+    params:
+      port: ['5201']
+    relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - target_label: __address__
+      replacement: 170.64.216.139:9579
+
+# all speedtest
+  - job_name: speedtest
+    scrape_interval: 5m
+    scrape_timeout: 1m
+    metrics_path: /probe
+    file_sd_configs:
+      - files:
+        - /etc/prometheus/speedtest-configmap.yml
+    relabel_configs:
+      - replacement: $1:9516
+        source_labels: [__address__]
+        target_label: __address__
+      #- source_labels: [__address__]
+      #  target_label: __param_target
+
+remote_write:
+  - url: "http://promscale:9201/write"
+remote_read:
+  - url: "http://promscale:9201/read"
+    read_recent: true

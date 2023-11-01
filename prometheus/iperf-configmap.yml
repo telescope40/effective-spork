@@ -6,81 +6,203 @@
 #  namespace: core
 #data:
   #iperf-configmap.yml: |-
-    - targets:
-        #New York Digital Ocean
-        - 159.89.177.46
-      "labels":
-        "job": "iperf-nyc"
-        "site": "NYC"
-        "environment": "production"
-        "datacenter": "do-newyork"
-        "provider": "digitalocean"
-        "source_name": "speedtest-monitor-do-nyc-01.safersoftware.net"
+  - "targets":
+    - 159.89.177.46:9579
+    "labels":
+        __param_target: 164.92.114.110
+        origin: "NYC"
 
-    - targets:
-      #Bangalore Digital Ocean
-        - 143.110.242.25
-      "labels":
-        "job": "iperf-blr"
-        "site": "BLR"
-        "ip": "143.110.242.25"
-        "environment": "production"
-        "datacenter": "do-bagalore"
-        "provider": "digitalocean"
-        "continent": "asia"
-        "source_name": "speedtest-monitor-do-blr-01.safersoftware.net"
+  - "targets":
+    - 159.89.177.46:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "NYC"
 
-    - "targets":
-      #Frankfurt Digital Ocean
-        - 157.245.83.95
-      "labels":
-        "job": "iperf-fra"
-        "site": "FRA"
-        "source": "157.245.83.95:9579"
-        "environment": "production"
-        "datacenter": "do-frankfurt"
-        "provider": "digitalocean"
-        "continent": "europe"
-        "source_name": "speedtest-monitor-do-fra-01.safersoftware.net"
+  - "targets":
+    - 159.89.177.46:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "NYC"
 
+  - "targets":
+    - 159.89.177.46:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "NYC"
 
-    - "targets":
-      #San Fransico Digital Ocean
-        - 164.92.114.110
-      "labels":
-        "job": "iperf-sfo"
-        "site": "SFO"
-        "environment": "production"
-        "datacenter": "do-sanfransico"
-        "provider": "digitalocean"
-        "continent": "north america"
-        "source_name": "speedtest-monitor-do-sfo-01.safersoftware.net"
+  - "targets":
+    - 159.89.177.46:9579
+    "labels":
+        __param_target: 157.245.83.95
+        origin: "NYC"
 
-    - "targets":
-      #Singapore Digital Ocean
-        - 128.199.198.194
-      "labels":
-        "job": "iperf-sgp"
-        "site": "SGP"
-        "environment": "production"
-        "datacenter": "do-singapore"
-        "provider": "digitalocean"
-        "continent": "asia"
-        "source_name": "speedtest-monitor-do-sgp-01.safersoftware.net"
+  - "targets":
+    - 164.92.114.110:9579
+    "labels":
+        __param_target: 159.89.177.46
+        origin: "SFO"
 
-    - "targets":
-      #Sydney Digital Ocean
-        - 170.64.216.139
-      "labels":
-        "job": "iperf-syd"
-        "site": "SYD"
-        "environment": "production"
-        "datacenter": "do-sydney"
-        "provider": "digitalocean"
-        "continent": "australia"
-        "source_name": "speedtest-monitor-do-syd-01.safersoftware.net"
+  - "targets":
+    - 164.92.114.110:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "SFO"
 
+  - "targets":
+    - 164.92.114.110:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "SFO"
 
+  - "targets":
+    - 164.92.114.110:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "SFO"
+
+  - "targets":
+    - 164.92.114.110:9579
+    "labels":
+        __param_target: 157.245.83.95
+        origin: "SFO"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 159.89.177.46
+        origin: "SGP"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 164.92.114.110
+        origin: "SGP"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "SGP"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "SGP"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "SGP"
+
+  - "targets":
+    - 128.199.198.194:9579
+    "labels":
+        __param_target: 157.245.83.95
+        origin: "SGP"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 159.89.177.46
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 164.92.114.110
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 157.245.83.95
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 159.89.177.46
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 164.92.114.110
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "BLR"
+
+  - "targets":
+    - 143.110.242.25:9579
+    "labels":
+        __param_target: 157.245.83.95
+        origin: "BLR"
+
+  - "targets":
+    - 157.245.83.95:9579
+    "labels":
+        __param_target: 159.89.177.46
+        origin: "FRA"
+
+  - "targets":
+    - 157.245.83.95:9579
+    "labels":
+        __param_target: 164.92.114.110
+        origin: "FRA"
+
+  - "targets":
+    - 157.245.83.95:9579
+    "labels":
+        __param_target: 128.199.198.194
+        origin: "FRA"
+
+  - "targets":
+    - 157.245.83.95:9579
+    "labels":
+        __param_target: 143.110.242.25
+        origin: "FRA"
+
+  - "targets":
+    - 157.245.83.95:9579
+    "labels":
+        __param_target: 170.64.216.139
+        origin: "FRA"
 
 
 
