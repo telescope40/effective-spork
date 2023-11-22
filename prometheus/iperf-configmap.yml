@@ -7,202 +7,76 @@
 #data:
   #iperf-configmap.yml: |-
   - "targets":
-    - 159.89.177.46:9579
+    - 164.92.114.110
+    - 157.245.83.95
+    - 128.199.198.194
+    - 143.110.242.25
+    - 170.64.216.139
     "labels":
-        __param_target: 164.92.114.110
+        __param_name: 159.89.177.46:9579
         origin: "NYC"
+        latitude: "40.6643"
+        longitude: "-73.9763"
+
 
   - "targets":
-    - 159.89.177.46:9579
+    - 159.89.177.46
+    - 157.245.83.95
+    - 128.199.198.194
+    - 143.110.242.25
+    - 170.64.216.139
     "labels":
-        __param_target: 128.199.198.194
-        origin: "NYC"
-
-  - "targets":
-    - 159.89.177.46:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "NYC"
-
-  - "targets":
-    - 159.89.177.46:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "NYC"
-
-  - "targets":
-    - 159.89.177.46:9579
-    "labels":
-        __param_target: 157.245.83.95
-        origin: "NYC"
-
-  - "targets":
-    - 164.92.114.110:9579
-    "labels":
-        __param_target: 159.89.177.46
+        __param_name: 164.92.114.110:9579
         origin: "SFO"
+        latitude: "37.3931"
+        longitude: "-121.962"
 
-  - "targets":
-    - 164.92.114.110:9579
-    "labels":
-        __param_target: 128.199.198.194
-        origin: "SFO"
-
-  - "targets":
-    - 164.92.114.110:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "SFO"
-
-  - "targets":
-    - 164.92.114.110:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "SFO"
-
-  - "targets":
-    - 164.92.114.110:9579
-    "labels":
-        __param_target: 157.245.83.95
-        origin: "SFO"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 159.89.177.46
-        origin: "SGP"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 164.92.114.110
-        origin: "SGP"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 128.199.198.194
-        origin: "SGP"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "SGP"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "SGP"
-
-  - "targets":
-    - 128.199.198.194:9579
-    "labels":
-        __param_target: 157.245.83.95
-        origin: "SGP"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 159.89.177.46
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 164.92.114.110
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 128.199.198.194
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 157.245.83.95
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 159.89.177.46
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 164.92.114.110
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 128.199.198.194
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "BLR"
-
-  - "targets":
-    - 143.110.242.25:9579
-    "labels":
-        __param_target: 157.245.83.95
-        origin: "BLR"
-
-  - "targets":
-    - 157.245.83.95:9579
-    "labels":
-        __param_target: 159.89.177.46
-        origin: "FRA"
-
-  - "targets":
-    - 157.245.83.95:9579
-    "labels":
-        __param_target: 164.92.114.110
-        origin: "FRA"
-
-  - "targets":
-    - 157.245.83.95:9579
-    "labels":
-        __param_target: 128.199.198.194
-        origin: "FRA"
-
-  - "targets":
-    - 157.245.83.95:9579
-    "labels":
-        __param_target: 143.110.242.25
-        origin: "FRA"
-
-  - "targets":
-    - 157.245.83.95:9579
-    "labels":
-        __param_target: 170.64.216.139
-        origin: "FRA"
-
-
-
+#  - "targets":
+#    - 159.89.177.46
+#    - 164.92.114.110
+#    - 128.199.198.194
+#    - 143.110.242.25
+#    - 170.64.216.139
+#    "labels":
+#        __param_name: 157.245.83.95:9579
+#        origin: "FRA"
+#        latitude: ""
+#        longitude: ""
+#
+#  - "targets":
+#    - 159.89.177.46
+#    - 164.92.114.110
+#    - 128.199.198.194
+#    - 157.245.83.95
+#    - 170.64.216.139
+#    "labels":
+#        __param_name: 143.110.242.25:9579
+#        origin: "BLR"
+#        latitude: "12.9634"
+#        longitude: "77.5855"
+#
+#
+#  - "targets":
+#    - 159.89.177.46
+#    - 164.92.114.110
+#    - 143.110.242.25
+#    - 157.245.83.95
+#    - 170.64.216.139
+#    "labels":
+#        __param_name: 128.199.198.194:9579
+#        origin: "SGP"
+#        latitude: "1.2929"
+#        longitude: "103.8547"
+#
+#
+#  - "targets":
+#    - 159.89.177.46
+#    - 164.92.114.110
+#    - 143.110.242.25
+#    - 157.245.83.95
+#    - 128.199.198.194
+#    "labels":
+#        __param_name: 170.64.216.139:9579
+#        origin: "SYD"
+#        latitude: "37.751"
+#        longitude: "-97.822"
