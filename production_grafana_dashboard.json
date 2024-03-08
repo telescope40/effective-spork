@@ -1,0 +1,547 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": 3,
+  "iteration": 1709926264291,
+  "links": [],
+  "liveNow": true,
+  "panels": [
+    {
+      "collapsed": false,
+      "datasource": null,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 16,
+      "panels": [],
+      "title": "Perfromance for $site",
+      "type": "row"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-YlBl"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 6,
+        "x": 0,
+        "y": 1
+      },
+      "id": 12,
+      "options": {
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.0-33922pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "ping_ms{site=\"$site\"}",
+          "legendFormat": "__auto",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Latency to Speedtest from $site",
+      "type": "gauge"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-YlBl"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "dark-red",
+                  "index": 1,
+                  "text": "Down"
+                },
+                "1": {
+                  "color": "dark-green",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "string"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 11,
+        "w": 17,
+        "x": 6,
+        "y": 1
+      },
+      "id": 13,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "auto",
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {},
+        "textMode": "auto"
+      },
+      "pluginVersion": "8.2.0-33922pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "iperf3_success{site=\"$site\"}",
+          "hide": false,
+          "legendFormat": "{{ site }} connected to {{ origin }}",
+          "range": true,
+          "refId": "B"
+        }
+      ],
+      "title": "$site connection to remote destinations ",
+      "transformations": [],
+      "type": "stat"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Measure of local Bandwidth Capability",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "continuous-YlBl"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 11,
+        "x": 0,
+        "y": 12
+      },
+      "id": 17,
+      "options": {
+        "displayMode": "basic",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.0-33922pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "download_speed_bps{site=\"$site\"}",
+          "legendFormat": "{{site}} Download  {{job}} ",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "iperf3_received_bytes{site=\"$site\"}/iperf3_received_seconds{site=\"$site\"} * 8",
+          "hide": false,
+          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "upload_speed_bps{site=\"$site\"}",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "legendFormat": " {{site}} Upload  {{job}} ",
+          "range": true,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "iperf3_sent_bytes{site=\"$site\"}/iperf3_sent_seconds{site=\"$site\"} * 8",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ site }}  {{job}} Upload from   {{ origin }}",
+          "range": true,
+          "refId": "F"
+        }
+      ],
+      "title": "Speedtest + IPERF Last $site ",
+      "transformations": [],
+      "type": "bargauge"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Measure of local Bandwidth Capability",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 0,
+            "gradientMode": "none",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "lineInterpolation": "linear",
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "auto",
+            "spanNulls": true,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "bps"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 12,
+        "x": 11,
+        "y": 12
+      },
+      "id": 18,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom"
+        },
+        "tooltip": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "8.2.0-33922pre",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "download_speed_bps{site=\"$site\"}",
+          "legendFormat": "{{site}} Download  {{job}} ",
+          "range": true,
+          "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "iperf3_received_bytes{site=\"$site\"}/iperf3_received_seconds{site=\"$site\"} * 8",
+          "hide": false,
+          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
+          "range": true,
+          "refId": "B"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "upload_speed_bps{site=\"$site\"}",
+          "format": "time_series",
+          "hide": false,
+          "instant": false,
+          "legendFormat": " {{site}} Upload  {{job}} ",
+          "range": true,
+          "refId": "E"
+        },
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "PvYVUwtVk"
+          },
+          "editorMode": "code",
+          "expr": "iperf3_sent_bytes{site=\"$site\"}/iperf3_sent_seconds{site=\"$site\"} * 8",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ site }}  {{job}} Upload from   {{ origin }}",
+          "range": true,
+          "refId": "F"
+        }
+      ],
+      "title": "Speedtest + IPERF Last $site ",
+      "transformations": [],
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "",
+  "revision": 1,
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "SGP",
+          "value": "SGP"
+        },
+        "datasource": "Prometheus",
+        "definition": "{job=\"iperf\"}",
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "includeAll": false,
+        "label": "origin",
+        "multi": false,
+        "name": "origin",
+        "options": [],
+        "query": {
+          "query": "{job=\"iperf\"}",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/.*,origin=\"([0-9a-zA-Z]*)\",.*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": true,
+          "text": "NRT",
+          "value": "NRT"
+        },
+        "datasource": "Prometheus",
+        "definition": "{job=\"speedtest\"}",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": "site",
+        "multi": false,
+        "name": "site",
+        "options": [],
+        "query": {
+          "query": "{job=\"speedtest\"}",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/.*,site=\"([0-9a-zA-Z]*)\",.*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {
+          "selected": true,
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
+        },
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "includeAll": true,
+        "label": "datasource",
+        "multi": true,
+        "name": "datasource",
+        "options": [],
+        "query": "prometheus",
+        "queryValue": "",
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "type": "datasource"
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "aws",
+          "value": "aws"
+        },
+        "datasource": "Prometheus",
+        "definition": "{job=\"speedtest\"}",
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "includeAll": false,
+        "label": "provider",
+        "multi": false,
+        "name": "provider",
+        "options": [],
+        "query": {
+          "query": "{job=\"speedtest\"}",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 1,
+        "regex": "/.*,provider=\"([0-9a-zA-Z]*)\",.*/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Speedtest Performance Monitoring",
+  "uid": "twGW-6MSk",
+  "version": 4
+}
