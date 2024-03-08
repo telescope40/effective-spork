@@ -57,17 +57,43 @@
 #        "continent": "north america"
 #        "source_name": "speedtest-monitor-do-sfo-01.safersoftware.net"
 #
-#    - "targets":
-#      #Singapore Digital Ocean
-#        - 128.199.198.194
-#      "labels":
-#        "job": "speedtest"
-#        "site": "SGP"
-#        "environment": "production"
-#        "datacenter": "do-singapore"
-#        "provider": "digitalocean"
-#        "continent": "asia"
-#        "source_name": "speedtest-monitor-do-sgp-01.safersoftware.net"
+    - "targets":
+      #Singapore Digital Ocean
+        - 128.199.198.194
+      "labels":
+        "job": "speedtest"
+        "site": "SGP"
+        "environment": "production"
+        "datacenter": "do-singapore"
+        "provider": "digitalocean"
+        "continent": "asia"
+        "source_name": "speedtest-monitor-do-sgp-01.safersoftware.net"
+
+
+    - "targets":
+      #China1 AWS
+        - 52.81.60.11
+      "labels":
+        "job": "speedtest"
+        "site": "China1"
+        "environment": "production"
+        "datacenter": "aws-cn-north-1"
+        "provider": "aws"
+        "continent": "asia"
+        "source_name": "speedtest-monitor-aws-china-01.safersoftware.net"
+
+     - "targets":
+          #China1 AWS
+            - 52.80.176.112
+          "labels":
+            "job": "speedtest"
+            "site": "China2"
+            "environment": "production"
+            "datacenter": "aws-cn-north-1"
+            "provider": "aws"
+            "continent": "asia"
+            "source_name": "speedtest-monitor-aws-china-02.safersoftware.net"
+
 #
 #    - "targets":
 #      #Sydney Digital Ocean
