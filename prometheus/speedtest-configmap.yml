@@ -6,72 +6,72 @@
 #  namespace: core
 #data:
   #speedtest-configmap.yml: |-
-    - "targets":
-        #New York Digital Ocean
-        - 159.89.177.46
-      "labels":
-        "job": "speedtest"
-        "site": "NYC"
-        "environment": "production"
-        "datacenter": "do-newyork"
-        "provider": "digitalocean"
-        "latitude": "40.6643"
-        "longitude": "-73.9763"
-        "source_name": "speedtest-monitor-do-nyc-01.safersoftware.net"
+#    - "targets":
+#        #New York Digital Ocean
+#        - 159.89.177.46
+#      "labels":
+#        "job": "speedtest"
+#        "site": "NYC"
+#        "environment": "production"
+#        "datacenter": "do-newyork"
+#        "provider": "digitalocean"
+#        "latitude": "40.6643"
+#        "longitude": "-73.9763"
+#        "source_name": "speedtest-monitor-do-nyc-01.safersoftware.net"
+#
+#    - "targets":
+#      #Bangalore Digital Ocean
+#        - 143.110.242.25
+#      "labels":
+#        "job": "speedtest"
+#        "site": "BLR"
+#        "environment": "production"
+#        "datacenter": "do-bagalore"
+#        "provider": "digitalocean"
+#        "latitude": "12.9634"
+#        "longitude": "77.5855"
+#        "source_name": "speedtest-monitor-do-blr-01.safersoftware.net"
+#
+#    - "targets":
+#      #Frankfurt Vultr
+#        - 108.61.211.103
+#      "labels":
+#        "job": "speedtest"
+#        "site": "FRA2"
+#        "environment": "production"
+#        "datacenter": "vultr-frankfurt"
+#        "provider": "vultr"
+#        "continent": "europe"
+#        "source_name": "speedtest-monitor-vultr-fra-01.safersoftware.net"
+#
+#
+#    - "targets":
+#      #San Fransico Digital Ocean
+#        - 164.92.114.110
+#      "labels":
+#        "job": "speedtest"
+#        "site": "SFO"
+#        "environment": "production"
+#        "datacenter": "do-sanfransico"
+#        "provider": "digitalocean"
+#        "continent": "north america"
+#        "source_name": "speedtest-monitor-do-sfo-01.safersoftware.net"
+#
+#    - "targets":
+#      #China AWS 1
+#        - 52.81.60.11
+#      "labels":
+#        "job": "iperf-china1"
+#        "site": "CHINA"
+#        "environment": "production"
+#        "datacenter": "aws-china"
+#        "provider": "aws"
+#        "continent": "asia"
+#        "source_name": "speedtest-monitor-aws-china-01.safersoftware.net"
 
     - "targets":
-      #Bangalore Digital Ocean
-        - 143.110.242.25
-      "labels":
-        "job": "speedtest"
-        "site": "BLR"
-        "environment": "production"
-        "datacenter": "do-bagalore"
-        "provider": "digitalocean"
-        "latitude": "12.9634"
-        "longitude": "77.5855"
-        "source_name": "speedtest-monitor-do-blr-01.safersoftware.net"
-
-    - "targets":
-      #Frankfurt Digital Ocean
-        - 157.245.83.95
-      "labels":
-        "job": "speedtest"
-        "site": "FRA"
-        "environment": "production"
-        "datacenter": "do-frankfurt"
-        "provider": "digitalocean"
-        "continent": "europe"
-        "source_name": "speedtest-monitor-do-fra-01.safersoftware.net"
-
-
-    - "targets":
-      #San Fransico Digital Ocean
-        - 164.92.114.110
-      "labels":
-        "job": "speedtest"
-        "site": "SFO"
-        "environment": "production"
-        "datacenter": "do-sanfransico"
-        "provider": "digitalocean"
-        "continent": "north america"
-        "source_name": "speedtest-monitor-do-sfo-01.safersoftware.net"
-
-    - "targets":
-      #China AWS 1
-        - 52.81.60.11
-      "labels":
-        "job": "iperf-china1"
-        "site": "CHINA"
-        "environment": "production"
-        "datacenter": "aws-china"
-        "provider": "aws"
-        "continent": "asia"
-        "source_name": "speedtest-monitor-aws-china-01.safersoftware.net"
-
-    - "targets":
-      #Singapore Digital Ocean
-        - 128.199.198.194
+      #Singapore3
+        - 64.176.82.111
       "labels":
         "job": "speedtest"
         "site": "SGP"
@@ -79,9 +79,7 @@
         "datacenter": "do-singapore"
         "provider": "digitalocean"
         "continent": "asia"
-        "latitude": "1.2929"
-        "longitude": "103.8547"
-        "source_name": "speedtest-monitor-do-sgp-01.safersoftware.net"
+
 
 #    - "targets":
 #      #Sydney Digital Ocean
@@ -97,7 +95,7 @@
 
     - "targets":
       #China AWS 1
-        - 52.81.60.11
+        - 140.179.69.15
       "labels":
         "job": "speedtest"
         "site": "CHINA1"
@@ -109,7 +107,7 @@
 
     - "targets":
       #China AWS 2
-        - 52.80.176.112
+        - 54.222.232.145
       "labels":
         "job": "speedtest"
         "site": "CHINA2"
