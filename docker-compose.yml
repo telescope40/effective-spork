@@ -68,7 +68,7 @@ services:
     links:
       - "loki:loki"
     volumes:
-      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
 
   #Description: Promscale - centralized, durable, and reliable storage solution for our Prometheus data
   #Dependencies: feeded by data from Prometheus, storing data in our Postgress TimescaledDB db.
