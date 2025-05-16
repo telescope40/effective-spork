@@ -13,11 +13,11 @@ services:
       - "5201:5201"
     command:
       - "-s"
-  speedtest:
-    hostname: prometheus_speedtest
-    image: "jraviles/prometheus_speedtest:latest"
-    ports:
-      - "9516:9516"
+        #speedtest:
+        # hostname: prometheus_speedtest
+        #image: "jraviles/prometheus_speedtest:latest"
+        #ports:
+        # - "9516:9516"
     #Description: Grafana - display logs and metrics WEB UI
     #Dependencies: feeded by data from Prometheus and Loki service using http:
     # - http://prometheus:9090
@@ -67,6 +67,10 @@ services:
       - ./prometheus/iperf-configmap.yml:/etc/prometheus/iperf-configmap.yml
       - ./prometheus/speedtest-configmap.yml:/etc/prometheus/speedtest-configmap.yml
       - ./prometheus/targets.json:/etc/prometheus/targets.json
+        #network_mode: host
+    #depends_on:
+            #  - loki
+        #  - promscale
 
   #Description: Promscale - centralized, durable, and reliable storage solution for our Prometheus data
   #Dependencies: feeded by data from Prometheus, storing data in our Postgress TimescaledDB db.
