@@ -67,28 +67,21 @@
 #        origin: "TOKYO"
 
   - "targets":
-    - 128.1.18.64 # NRT-Accelerated
-    "labels":
-        __param_name: 140.179.69.15:9579
-        origin: "CHINA1"
-        latitude: "1.2929"
-        longitude: "103.8547"
-
-  - "targets":
     - 139.162.114.150 # NRT
+    - 10.250.7.254 # Inside IPSEC VPN
     "labels":
         __param_name: 140.179.69.15:9579
         origin: "CHINA1"
         latitude: "1.2929"
         longitude: "103.8547"
 
-  - "targets":
-    - 10.250.7.1 # Inside Wireguard VPN
-    "labels":
-        __param_name: 140.179.69.15:9579
-        origin: "CHINA1"
-        latitude: "1.2929"
-        longitude: "103.8547"
+#  - "targets":
+#    - 10.250.7.1 # Inside Wireguard VPN
+#    "labels":
+#        __param_name: 140.179.69.15:9579
+#        origin: "CHINA1"
+#        latitude: "1.2929"
+#        longitude: "103.8547"
 
   - "targets":
     - 64.176.82.111 # SG3

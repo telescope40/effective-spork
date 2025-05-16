@@ -26,7 +26,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 3,
-  "iteration": 1709926264291,
+  "iteration": 1714041340817,
   "links": [],
   "liveNow": true,
   "panels": [
@@ -170,16 +170,12 @@
       "pluginVersion": "8.2.0-33922pre",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "iperf3_success{site=\"$site\"}",
+          "exemplar": true,
+          "expr": "iperf3_success{}",
           "hide": false,
+          "interval": "",
           "legendFormat": "{{ site }} connected to {{ origin }}",
-          "range": true,
-          "refId": "B"
+          "refId": "A"
         }
       ],
       "title": "$site connection to remote destinations ",
@@ -219,6 +215,7 @@
         "y": 12
       },
       "id": 17,
+      "maxPerRow": 2,
       "options": {
         "displayMode": "basic",
         "minVizHeight": 10,
@@ -226,7 +223,7 @@
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
@@ -235,56 +232,40 @@
         "text": {}
       },
       "pluginVersion": "8.2.0-33922pre",
+      "repeat": "origin",
+      "repeatDirection": "h",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "download_speed_bps{site=\"$site\"}",
-          "legendFormat": "{{site}} Download  {{job}} ",
-          "range": true,
+          "exemplar": true,
+          "expr": "iperf3_received_bytes{}/iperf3_received_seconds{} *8",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "iperf3_received_bytes{site=\"$site\"}/iperf3_received_seconds{site=\"$site\"} * 8",
+          "exemplar": true,
+          "expr": "upload_speed_bps{}",
           "hide": false,
-          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
-          "range": true,
+          "interval": "",
+          "legendFormat": " {{site}} Upload  {{job}} ",
           "refId": "B"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "upload_speed_bps{site=\"$site\"}",
-          "format": "time_series",
+          "exemplar": true,
+          "expr": "download_speed_bps{}",
           "hide": false,
-          "instant": false,
-          "legendFormat": " {{site}} Upload  {{job}} ",
-          "range": true,
-          "refId": "E"
+          "interval": "",
+          "legendFormat": "{{site}} Download  {{job}} ",
+          "refId": "C"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "iperf3_sent_bytes{site=\"$site\"}/iperf3_sent_seconds{site=\"$site\"} * 8",
+          "exemplar": true,
+          "expr": "iperf3_sent_bytes{}/iperf3_sent_seconds{} * 8",
           "hide": false,
           "interval": "",
           "legendFormat": "{{ site }}  {{job}} Upload from   {{ origin }}",
-          "range": true,
-          "refId": "F"
+          "refId": "D"
         }
       ],
       "title": "Speedtest + IPERF Last $site ",
@@ -347,72 +328,59 @@
       },
       "gridPos": {
         "h": 15,
-        "w": 12,
+        "w": 11,
         "x": 11,
         "y": 12
       },
       "id": 18,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
-          "placement": "bottom"
+          "calcs": [
+            "mean",
+            "logmin",
+            "max"
+          ],
+          "displayMode": "table",
+          "placement": "right"
         },
         "tooltip": {
           "mode": "single"
         }
       },
       "pluginVersion": "8.2.0-33922pre",
+      "repeatDirection": "h",
       "targets": [
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "download_speed_bps{site=\"$site\"}",
-          "legendFormat": "{{site}} Download  {{job}} ",
-          "range": true,
+          "exemplar": true,
+          "expr": "iperf3_received_bytes{}/iperf3_received_seconds{} *8",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
           "refId": "A"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "iperf3_received_bytes{site=\"$site\"}/iperf3_received_seconds{site=\"$site\"} * 8",
+          "exemplar": true,
+          "expr": "upload_speed_bps{}",
           "hide": false,
-          "legendFormat": "{{ site }}  {{job}} Download from   {{ origin }}",
-          "range": true,
+          "interval": "",
+          "legendFormat": " {{site}} Upload  {{job}} ",
           "refId": "B"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "upload_speed_bps{site=\"$site\"}",
-          "format": "time_series",
+          "exemplar": true,
+          "expr": "download_speed_bps{}",
           "hide": false,
-          "instant": false,
-          "legendFormat": " {{site}} Upload  {{job}} ",
-          "range": true,
-          "refId": "E"
+          "interval": "",
+          "legendFormat": "{{site}} Download  {{job}} ",
+          "refId": "C"
         },
         {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "PvYVUwtVk"
-          },
-          "editorMode": "code",
-          "expr": "iperf3_sent_bytes{site=\"$site\"}/iperf3_sent_seconds{site=\"$site\"} * 8",
+          "exemplar": true,
+          "expr": "iperf3_sent_bytes{}/iperf3_sent_seconds{} * 8",
           "hide": false,
           "interval": "",
           "legendFormat": "{{ site }}  {{job}} Upload from   {{ origin }}",
-          "range": true,
-          "refId": "F"
+          "refId": "D"
         }
       ],
       "title": "Speedtest + IPERF Last $site ",
@@ -431,8 +399,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "SGP",
-          "value": "SGP"
+          "text": "CHINA2",
+          "value": "CHINA2"
         },
         "datasource": "Prometheus",
         "definition": "{job=\"iperf\"}",
@@ -457,9 +425,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": true,
-          "text": "NRT",
-          "value": "NRT"
+          "selected": false,
+          "text": "CHINA1",
+          "value": "CHINA1"
         },
         "datasource": "Prometheus",
         "definition": "{job=\"speedtest\"}",
@@ -543,5 +511,5 @@
   "timezone": "",
   "title": "Speedtest Performance Monitoring",
   "uid": "twGW-6MSk",
-  "version": 4
+  "version": 9
 }

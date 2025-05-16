@@ -1,5 +1,5 @@
 # effective-spork 
-This repository is a basic IaC to execute common performance testing and produce monitoring output. 
+This repository is a basic IaC to execute common performance testing and produce monitoring output.
 
 ### docker-compose.yml
 - File the downloads & orchestrates the build of several docker images that make up the services
