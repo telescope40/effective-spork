@@ -23,7 +23,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 1,
-  "iteration": 1747373519012,
+  "iteration": 1747398799486,
   "links": [],
   "liveNow": true,
   "panels": [
@@ -82,8 +82,8 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 9,
-        "w": 22,
+        "h": 12,
+        "w": 24,
         "x": 0,
         "y": 0
       },
@@ -91,7 +91,7 @@
       "options": {
         "legend": {
           "calcs": [
-            "last"
+            "max"
           ],
           "displayMode": "table",
           "placement": "right"
@@ -106,7 +106,7 @@
           "exemplar": true,
           "expr": "iperf3_bits_per_second{proto=\"udp\"}",
           "interval": "",
-          "legendFormat": "{{label}} {{proto}}",
+          "legendFormat": "{{label}} {{proto}} {{server}}",
           "refId": "A"
         },
         {
@@ -114,11 +114,11 @@
           "expr": "iperf3_bits_per_second{proto=\"tcp\"}",
           "hide": false,
           "interval": "",
-          "legendFormat": "{{label}} {{proto}}",
+          "legendFormat": "{{label}} {{proto}} {{server}}",
           "refId": "B"
         }
       ],
-      "title": "UDP IPERF EWR --> ",
+      "title": "Max  IPERF EWR --> Remote Sites",
       "transformations": [],
       "type": "timeseries"
     },
@@ -151,16 +151,16 @@
       "gridPos": {
         "h": 15,
         "w": 23,
-        "x": 0,
-        "y": 9
+        "x": 1,
+        "y": 12
       },
-      "id": 17,
+      "id": 19,
       "options": {
         "displayMode": "gradient",
         "orientation": "horizontal",
         "reduceOptions": {
           "calcs": [
-            "lastNotNull"
+            "mean"
           ],
           "fields": "",
           "values": false
@@ -174,12 +174,71 @@
           "exemplar": true,
           "expr": "iperf3_bits_per_second{}",
           "interval": "",
-          "legendFormat": "{{label}} {{proto}}",
+          "legendFormat": "{{label}} {{proto}} {{server}}",
           "refId": "A"
         }
       ],
-      "title": "EWR IPERF ---> BAR",
+      "title": "Average EWR - IPERF ---> Remote",
       "type": "bargauge"
+    },
+    {
+      "datasource": "Prometheus",
+      "description": "Iperf Testing between Sites",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "ms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 23,
+        "x": 0,
+        "y": 27
+      },
+      "id": 17,
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "last"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.0-33922pre",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "iperf3_latency_ms{proto=~\"icmp\"}",
+          "interval": "",
+          "legendFormat": "{{label}} {{server}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Latency EWR 45.63.5.21 -- Remote ",
+      "type": "gauge"
     }
   ],
   "refresh": "",
@@ -219,12 +278,12 @@
     ]
   },
   "time": {
-    "from": "now-5m",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Vultr UDP IPerf Testing",
   "uid": "twGW-6MSk",
-  "version": 10
+  "version": 16
 }
